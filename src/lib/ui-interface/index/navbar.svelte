@@ -2,7 +2,7 @@
 	import { resolve } from '$app/paths';
 	import { onMount } from 'svelte';
 
-	let scrolled = false;
+	let scrolled = $state(false);
 
 	onMount(() => {
 		const handler = () => (scrolled = window.scrollY > 20);
@@ -10,9 +10,9 @@
 		return () => window.removeEventListener('scroll', handler);
 	});
 
-	$: navClass = scrolled
+	const navClass = $derived(scrolled
 		? 'bg-black/80 backdrop-blur-xl border-white/5'
-		: 'border-transparent';
+		: 'border-transparent');
 </script>
 
 <nav class="fixed top-0 left-0 right-0 z-50 py-4 border-b transition-all duration-300 {navClass}">
