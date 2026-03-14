@@ -1,60 +1,231 @@
-<script lang="ts">
-	import { resolve } from '$app/paths';
+<script>
+  import { onMount } from 'svelte';
+
+  let mounted = false;
+  onMount(() => {
+    // Tiny delay so CSS animations feel intentional
+    requestAnimationFrame(() => { mounted = true; });
+  });
 </script>
 
-<section class="min-h-screen flex flex-col items-center justify-center pt-16 pb-16 relative z-10 px-6 text-center">
+<section class="hero relative min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-16 overflow-hidden">
 
-	<div
-		class="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest border mb-8"
-		style="color: var(--accent); background: var(--accent-dim); border-color: rgba(79,142,240,0.25)"
-	>
-		<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
-			<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-		</svg>
-		Real talk. Real time.
-	</div>
+  <!-- Soft radial glow behind icon -->
+  <div class="glow" aria-hidden="true"></div>
 
-	<h1
-		class="font-black text-white m-0 mb-6 leading-none"
-		style="font-size: clamp(3.5rem, 10vw, 7rem); letter-spacing: -0.04em"
-	>
-		Chat without<br />
-		<span style="color: var(--accent)">the clutter</span>
-	</h1>
+  <!-- Icon badge -->
+  <div class="icon-badge glass" class:in={mounted}>
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+      <!-- Abstract "flux" node icon -->
+      <rect x="6" y="6" width="18" height="18" rx="5" fill="#2563eb" opacity="0.15"/>
+      <rect x="28" y="6" width="18" height="18" rx="5" fill="#2563eb" opacity="0.35"/>
+      <rect x="6" y="28" width="18" height="18" rx="5" fill="#2563eb" opacity="0.35"/>
+      <rect x="28" y="28" width="18" height="18" rx="5" fill="#2563eb"/>
+      <!-- connecting lines -->
+      <line x1="15" y1="24" x2="15" y2="28" stroke="#2563eb" stroke-width="1.5" opacity="0.4"/>
+      <line x1="37" y1="24" x2="37" y2="28" stroke="#2563eb" stroke-width="1.5" opacity="0.5"/>
+      <line x1="24" y1="15" x2="28" y2="15" stroke="#2563eb" stroke-width="1.5" opacity="0.4"/>
+      <line x1="24" y1="37" x2="28" y2="37" stroke="#2563eb" stroke-width="1.5" opacity="0.5"/>
+    </svg>
+  </div>
 
-	<p
-		class="font-light leading-relaxed mb-10 mx-auto"
-		style="font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-secondary); max-width: 48ch"
-	>
-		Fluxon is a fast, minimal chat platform for communities and friends.
-		Clean interface, real conversations — nothing in the way.
-	</p>
+  <!-- Heading -->
+  <h1 class="heading" class:in={mounted}>
+    Fluxon
+  </h1>
 
-	<div class="flex items-center gap-4 flex-wrap justify-center">
-		<a
-			href={resolve('/register')}
-			class="inline-flex items-center gap-2 font-semibold text-white px-8 py-3.5 rounded-full no-underline transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110"
-			style="background: var(--accent); font-size: 0.95rem"
-		>
-			Open Fluxon
-			<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-				<path d="M5 12h14M12 5l7 7-7 7"/>
-			</svg>
-		</a>
-		<a
-			href="#features"
-			class="inline-flex items-center font-semibold px-8 py-3.5 rounded-full border no-underline transition-all duration-200 hover:bg-white/5 hover:text-white hover:border-white/20"
-			style="color: var(--text-secondary); border-color: rgba(255,255,255,0.12); font-size: 0.95rem"
-		>
-			Learn more
-		</a>
-	</div>
+  <!-- Tagline -->
+  <p class="tagline" class:in={mounted}>
+    Built for everyone
+  </p>
 
-	<div class="absolute bottom-8 flex flex-col items-center gap-2" style="color: var(--text-muted)">
-		<span class="text-xs uppercase tracking-widest">Scroll</span>
-		<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-			<path d="M12 5v14M5 12l7 7 7-7"/>
-		</svg>
-	</div>
+  <!-- Description -->
+  <p class="description" class:in={mounted}>
+    The platform that allows us to chat, hangout & study —<br class="hidden sm:block"/>
+    so you can meet new friends & chat.
+  </p>
+
+  <!-- CTA buttons -->
+  <div class="cta-row" class:in={mounted}>
+    <a href="#products" class="btn-primary">
+      Explore Platform
+    </a>
+    <a href="#contact" class="btn-ghost">
+      Talk to us
+    </a>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint" class:in={mounted}>
+    <span>SCROLL</span>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M7 1v12M2 8l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
 
 </section>
+
+<style>
+  /* ── Glow orb ── */
+  .glow {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 520px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(37,99,235,0.12) 0%, transparent 70%);
+    pointer-events: none;
+    filter: blur(2px);
+  }
+
+  /* ── Icon badge ── */
+  .icon-badge {
+    width: 100px;
+    height: 100px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.05);
+
+    opacity: 0;
+    transform: translateY(16px) scale(0.95);
+    transition: opacity 0.55s cubic-bezier(.22,1,.36,1), transform 0.55s cubic-bezier(.22,1,.36,1);
+  }
+  .icon-badge.in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* ── Heading ── */
+  .heading {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(64px, 10vw, 112px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: var(--fg);
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s 0.1s cubic-bezier(.22,1,.36,1), transform 0.6s 0.1s cubic-bezier(.22,1,.36,1);
+  }
+  .heading.in { opacity: 1; transform: translateY(0); }
+
+  /* ── Tagline ── */
+  .tagline {
+    margin-top: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s 0.2s cubic-bezier(.22,1,.36,1), transform 0.6s 0.2s cubic-bezier(.22,1,.36,1);
+  }
+  .tagline.in { opacity: 1; transform: translateY(0); }
+
+  /* ── Description ── */
+  .description {
+    margin-top: 24px;
+    font-size: clamp(15px, 2vw, 17px);
+    line-height: 1.7;
+    color: var(--fg-muted);
+    text-align: center;
+    max-width: 480px;
+
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s 0.3s cubic-bezier(.22,1,.36,1), transform 0.6s 0.3s cubic-bezier(.22,1,.36,1);
+  }
+  .description.in { opacity: 1; transform: translateY(0); }
+
+  /* ── CTA row ── */
+  .cta-row {
+    margin-top: 40px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s 0.4s cubic-bezier(.22,1,.36,1), transform 0.6s 0.4s cubic-bezier(.22,1,.36,1);
+  }
+  .cta-row.in { opacity: 1; transform: translateY(0); }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 13px 28px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 3px 12px rgba(37,99,235,0.32);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    letter-spacing: -0.01em;
+  }
+  .btn-primary:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37,99,235,0.38);
+  }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    padding: 13px 28px;
+    background: rgba(255,255,255,0.7);
+    color: var(--fg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: -0.01em;
+  }
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.9);
+    transform: translateY(-1px);
+  }
+
+  /* ── Scroll hint ── */
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    translate: -50% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--fg-muted);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+
+    opacity: 0;
+    transition: opacity 0.6s 0.7s;
+    animation: bob 2s 1.4s ease-in-out infinite;
+  }
+  .scroll-hint.in { opacity: 1; }
+
+  @keyframes bob {
+    0%, 100% { transform: translate(-50%, 0); }
+    50%       { transform: translate(-50%, 5px); }
+  }
+</style>
