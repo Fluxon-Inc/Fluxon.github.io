@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 /* CSS Variables */
 :root {
   --bg-primary:   #0a0a0b;
@@ -15,14 +16,14 @@
   --text-secondary: #9b99a8;
   --text-muted:     #5a5869;
 
-  --accent:         #c8f04f;   /* electric lime — sharp, minimal */
-  --accent-dim:     rgba(200, 240, 79, 0.12);
-  --accent-glow:    rgba(200, 240, 79, 0.25);
+  --accent:      #c8f04f;
+  --accent-dim:  rgba(200, 240, 79, 0.12);
+  --accent-glow: rgba(200, 240, 79, 0.25);
 
-  --radius-sm:  6px;
-  --radius-md:  12px;
-  --radius-lg:  20px;
-  --radius-xl:  32px;
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   32px;
   --radius-full: 9999px;
 
   --font-display: 'Syne', sans-serif;
@@ -73,8 +74,7 @@ body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background:
-    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(200, 240, 79, 0.06) 0%, transparent 65%);
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(200, 240, 79, 0.06) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
 }
@@ -89,8 +89,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); }
-h2 { font-size: clamp(2rem,  5vw, 3.5rem); }
-h3 { font-size: clamp(1.4rem, 3vw, 2rem);  }
+h2 { font-size: clamp(2rem,   5vw, 3.5rem); }
+h3 { font-size: clamp(1.4rem, 3vw, 2rem);   }
 
 p {
   color: var(--text-secondary);
@@ -118,7 +118,7 @@ a {
   padding-block: clamp(4rem, 10vw, 8rem);
 }
 
-/* Surface / Card */
+/*  Surface / Card */
 .surface {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -175,7 +175,7 @@ a {
   border-color: var(--border-strong);
 }
 
-/* Nav  */
+/*  Nav */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -194,7 +194,7 @@ a {
   -webkit-backdrop-filter: blur(20px);
 }
 
-/* Accent / Tag chip */
+/*  Tag chip */
 .tag {
   display: inline-flex;
   align-items: center;
@@ -211,7 +211,7 @@ a {
   padding: 0.3rem 0.85rem;
 }
 
-/* Divider */
+/*  Divider  */
 .divider {
   width: 100%;
   height: 1px;
@@ -225,13 +225,13 @@ a {
 ::-webkit-scrollbar-thumb { background: var(--bg-elevated); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
-/* Selection */
+/*  Selection  */
 ::selection {
   background: var(--accent-dim);
   color: var(--accent);
 }
 
-/* Focus */
+/*  Focus  */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
@@ -254,19 +254,15 @@ a {
   50%       { box-shadow: 0 0 24px 6px var(--accent-glow); }
 }
 
-.animate-fade-up  { animation: fadeUp 0.7s var(--ease-out-expo) both; }
-.animate-fade-in  { animation: fadeIn 0.5s var(--ease-in-out) both; }
+.animate-fade-up { animation: fadeUp 0.7s var(--ease-out-expo) both; }
+.animate-fade-in { animation: fadeIn 0.5s var(--ease-in-out) both; }
 
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
 .delay-400 { animation-delay: 0.4s; }
 
-/* Tailwind layer overrides */
-@layer base {
-  * { @apply border-border; }
-}
-
+/*  Tailwind component helpers */
 @layer components {
   .text-gradient {
     @apply bg-clip-text text-transparent;
