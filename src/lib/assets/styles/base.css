@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 /* CSS Variables */
 :root {
   --bg-primary:   #0a0a0b;
@@ -64,7 +63,7 @@ body::before {
   background-image:
     linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px);
-  background-size: 160px 160px;
+  background-size: 80px 80px;
   pointer-events: none;
   z-index: 0;
 }
@@ -118,7 +117,7 @@ a {
   padding-block: clamp(4rem, 10vw, 8rem);
 }
 
-/*  Surface / Card */
+/* Surface / Card */
 .surface {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
@@ -175,7 +174,7 @@ a {
   border-color: var(--border-strong);
 }
 
-/*  Nav */
+/* Nav */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -194,7 +193,7 @@ a {
   -webkit-backdrop-filter: blur(20px);
 }
 
-/*  Tag chip */
+/* Tag chip */
 .tag {
   display: inline-flex;
   align-items: center;
@@ -211,7 +210,7 @@ a {
   padding: 0.3rem 0.85rem;
 }
 
-/*  Divider  */
+/*  Divider */
 .divider {
   width: 100%;
   height: 1px;
@@ -219,26 +218,26 @@ a {
   border: none;
 }
 
-/*  Scrollbar  */
+/* Scrollbar */
 ::-webkit-scrollbar       { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
 ::-webkit-scrollbar-thumb { background: var(--bg-elevated); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
-/*  Selection  */
+/* Selection */
 ::selection {
   background: var(--accent-dim);
   color: var(--accent);
 }
 
-/*  Focus  */
+/*  Focus */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* Animations */
+/*  Animations  */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -262,7 +261,7 @@ a {
 .delay-300 { animation-delay: 0.3s; }
 .delay-400 { animation-delay: 0.4s; }
 
-/*  Tailwind component helpers */
+/* Tailwind component helpers */
 @layer components {
   .text-gradient {
     @apply bg-clip-text text-transparent;

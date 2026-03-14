@@ -1,3 +1,9 @@
 <script lang="ts">
-	import '$lib/ui-interface/index.ts';
+	import { Navbar, Hero, Features, Cta, Footer } from '$lib/ui-interface/index.js';
 </script>
+
+<Navbar />
+<Hero />
+<Features />
+<Cta />
+<Footer />

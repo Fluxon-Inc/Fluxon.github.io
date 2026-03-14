@@ -18,7 +18,7 @@
 <nav class="fixed top-0 left-0 right-0 z-50 py-4 border-b transition-all duration-300 {navClass}">
 	<div class="max-w-6xl mx-auto px-6 flex items-center">
 
-		<a href={resolve('/')} class="flex items-center gap-2.5 no-underline flex-shrink-0">
+		<a href={resolve('/')} class="flex items-center gap-2.5 no-underline shrink-0">
 			<div class="w-8 h-8 rounded-lg grid place-items-center text-black" style="background: var(--accent)">
 				<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
 					<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -46,7 +46,7 @@
 
 		<a
 			href={resolve('/register')}
-			class="flex-shrink-0 inline-flex items-center gap-2 text-sm font-semibold text-black px-5 py-2.5 rounded-full no-underline transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110"
+			class="shrink-0 inline-flex items-center gap-2 text-sm font-semibold text-black px-5 py-2.5 rounded-full no-underline transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110"
 			style="background: var(--accent); font-family: var(--font-display)"
 		>
 			Get Started

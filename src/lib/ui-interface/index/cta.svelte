@@ -20,7 +20,7 @@
 				</p>
 			</div>
 
-			<div class="flex items-center gap-3 flex-shrink-0">
+			<div class="flex items-center gap-3 shrink-0">
 				<a
 					href={resolve('/register')}
 					class="inline-flex items-center gap-2 text-sm font-semibold text-black px-7 py-3 rounded-full no-underline transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110"

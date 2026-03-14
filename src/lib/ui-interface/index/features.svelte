@@ -19,7 +19,7 @@
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
 			<div class="flex flex-col gap-5 rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:border-white/15" style="background: var(--bg-surface); border-color: var(--border-subtle)">
-				<div class="w-11 h-11 rounded-xl grid place-items-center flex-shrink-0" style="background: var(--accent-dim); color: var(--accent)">
+				<div class="w-11 h-11 rounded-xl grid place-items-center shrink-0" style="background: var(--accent-dim); color: var(--accent)">
 					<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
 						<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
 					</svg>
@@ -33,7 +33,7 @@
 			</div>
 
 			<div class="flex flex-col gap-5 rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:border-white/15" style="background: var(--bg-surface); border-color: var(--border-subtle)">
-				<div class="w-11 h-11 rounded-xl grid place-items-center flex-shrink-0" style="background: var(--accent-dim); color: var(--accent)">
+				<div class="w-11 h-11 rounded-xl grid place-items-center shrink-0" style="background: var(--accent-dim); color: var(--accent)">
 					<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
 						<path d="M4 6h16M4 10h16M4 14h8M4 18h8"/>
 					</svg>
@@ -47,7 +47,7 @@
 			</div>
 
 			<div class="flex flex-col gap-5 rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:border-white/15" style="background: var(--bg-surface); border-color: var(--border-subtle)">
-				<div class="w-11 h-11 rounded-xl grid place-items-center flex-shrink-0" style="background: var(--accent-dim); color: var(--accent)">
+				<div class="w-11 h-11 rounded-xl grid place-items-center shrink-0" style="background: var(--accent-dim); color: var(--accent)">
 					<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
 						<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
 						<circle cx="9" cy="7" r="4"/>
@@ -63,7 +63,7 @@
 			</div>
 
 			<div class="flex flex-col gap-5 rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:border-white/15" style="background: var(--bg-surface); border-color: var(--border-subtle)">
-				<div class="w-11 h-11 rounded-xl grid place-items-center flex-shrink-0" style="background: var(--accent-dim); color: var(--accent)">
+				<div class="w-11 h-11 rounded-xl grid place-items-center shrink-0" style="background: var(--accent-dim); color: var(--accent)">
 					<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
 						<path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.41 17.41a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
 					</svg>
